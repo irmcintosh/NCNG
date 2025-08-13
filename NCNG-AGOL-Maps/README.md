@@ -80,13 +80,6 @@ This application was designed to:
 
 ---
 
-## Contact
-
-For questions, support, or access requests, contact:  
-📧 **NGNC-GIS@army.mil**
-
----
-
 ## Terms of Use
 
 This application is for **official use only** by authorized NCNG personnel.  
