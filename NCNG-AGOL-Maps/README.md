@@ -1,6 +1,6 @@
 # NCNG Web Map Template Saver
 
-![NCNG Web Map Template Saver Screenshot](./23a8f63d-7034-4bb5-a307-b8c9d7407c08.png)
+![NCNG Web Map Template Saver Screenshot](Screenshot%202025-08-13%20065800.png)
 
 ## Overview
 
