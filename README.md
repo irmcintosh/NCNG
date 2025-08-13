@@ -1,2 +1,0 @@
-# NCNG
-application supporting ncng
