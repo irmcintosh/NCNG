@@ -1,69 +1,98 @@
-# React + TypeScript + Vite
+# NCNG Web Map Template Saver
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![NCNG Web Map Template Saver Screenshot](./23a8f63d-7034-4bb5-a307-b8c9d7407c08.png)
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The **NCNG Web Map Template Saver** is a custom ArcGIS Online companion application developed for the **North Carolina National Guard (NCNG)**.  
+Its primary purpose is to allow authorized users to quickly and consistently save standardized copies of ArcGIS web map templates, following NCNG’s naming and organizational conventions.
 
-## Expanding the ESLint configuration
+This tool streamlines the process of creating operationally consistent maps by enforcing title formats, folder organization, and tagging conventions.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Purpose
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Operational mapping within the NCNG requires **consistency**, **speed**, and **organization**.  
+This application was designed to:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Save copies of official NCNG web map templates to a user's ArcGIS Online content.
+- Apply **naming conventions** that follow the format:
+- - Default certain fields (like **Fiscal Year**) to reduce repetitive manual input.
+- Allow users to **select an existing folder** or **create a new folder** for storage.
+- Support **tags**, **summaries**, and **descriptions** to improve discoverability in ArcGIS Online.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Features
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **ArcGIS Online Authentication** – Secure OAuth 2.0 PKCE sign-in.
+- **Auto-generated Titles** – Based on NCNG operational naming standards.
+- **Default Fiscal Year** – Automatically populates the current NCNG fiscal year.
+- **Folder Management** – Choose existing folders or create new ones directly in the app.
+- **Tagging Support** – Helps organize and locate content in ArcGIS Online.
+- **User-Friendly Interface** – Designed for efficiency in emergency or operational contexts.
+
+---
+
+## Usage
+
+1. **Sign In to ArcGIS**  
+ Click **"Sign in to ArcGIS"** to authenticate with your NCNG ArcGIS Online account.
+
+2. **Fill in Metadata Fields**  
+ - **Portfolio/Mission** – High-level operational category (e.g., `SAD`, `IEMAC`, `OPS`).
+ - **Environment** – Select `AGOL` or `PORTAL`.
+ - **Purpose** – Describe the map’s intended use (auto-formatted to PascalCase).
+ - **Owner** – Enter the owning section or unit (auto-formatted to UPPERCASE).
+ - **Fiscal Year** – Defaults automatically (e.g., `FY25`).
+ - **Tags, Summary, Description** – Optional metadata for search/discovery.
+
+3. **Choose Save Location**  
+ - Select **Use existing** to choose an existing folder, or
+ - Select **Create new** and enter a new folder name.
+
+4. **Save**  
+ Click **"Save My Copy"** to create a personal copy of the template in your ArcGIS Online account.
+
+---
+
+## Example Workflow
+
+1. Portfolio: `SAD`
+2. Environment: `AGOL`
+3. Purpose: `Collaboration`
+4. Owner: `GEO`
+5. Fiscal Year: `FY25` (auto)
+6. Tags: `NCNG, SAD, Collaboration`
+7. Save to folder: `OPS 2025`
+
+**Generated Title:**  
+
+---
+
+## Technical Notes
+
+- **Authentication:** Uses Esri's `@esri/arcgis-rest-auth` PKCE OAuth 2.0 flow.
+- **ArcGIS Content API:** Saves templates via `@esri/arcgis-rest-portal`.
+- **Framework:** Built with React + TypeScript + Vite.
+- **UI:** Styled for quick operational data entry and compliance with NCNG style guidelines.
+
+---
+
+## Contact
+
+For questions, support, or access requests, contact:  
+📧 **NGNC-GIS@army.mil**
+
+---
+
+## Terms of Use
+
+This application is for **official use only** by authorized NCNG personnel.  
+By using this application, you agree to abide by all NCNG and NCDPS policies.  
+Redistribution or public sharing without written authorization is prohibited.
+
+---
+
+
